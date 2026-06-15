@@ -624,3 +624,36 @@ body {
         max-width: 900px;
     }
 }
+
+/* ===== Lab 04 output ===== */
+
+.js-lab-card {
+    border-left: 0.4rem solid var(--color-accent);
+}
+
+.js-output {
+    display: grid;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.js-result {
+    padding: var(--spacing-md);
+    border: 0.06rem solid #dbe4ef;
+    border-radius: var(--border-radius);
+    background: #f8fafc;
+}
+
+.js-result h3 {
+    margin-top: 0;
+}
+
+.js-result pre {
+    max-height: 18rem;
+    overflow: auto;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    background: var(--color-dark);
+    color: var(--color-surface);
+    font-size: 0.9rem;
+}
