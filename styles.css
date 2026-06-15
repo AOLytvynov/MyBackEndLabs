@@ -657,3 +657,17 @@ body {
     color: var(--color-surface);
     font-size: 0.9rem;
 }
+
+/* ===== Lab 04 output fix ===== */
+
+.js-result pre {
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: visible;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.js-output {
+    max-width: 100%;
+}
