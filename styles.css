@@ -1,0 +1,329 @@
+﻿/* ===== General ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1f2937;
+    background: hsl(210, 40%, 96%);
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+}
+
+h2 {
+    position: relative;
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 0.2rem;
+    margin-top: 0.4rem;
+    background: #2563eb;
+    border-radius: 1rem;
+}
+
+p {
+    margin: 0.6rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Links ===== */
+
+a:link {
+    color: #2563eb;
+}
+
+a:visited {
+    color: #6d28d9;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+a:active {
+    color: rgb(185, 28, 28);
+}
+
+a:focus {
+    outline: 0.15rem solid #f59e0b;
+    outline-offset: 0.15rem;
+}
+
+/* ===== Header and navigation ===== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #111827;
+    color: #ffffff;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.nav-menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu > li {
+    display: inline-block;
+    margin: 0.25rem 0.4rem 0.25rem 0;
+}
+
+nav ul li a,
+.nav-menu strong {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    color: #ffffff;
+    background: #2563eb;
+}
+
+nav ul li a:hover,
+.nav-menu strong {
+    background: #60a5fa;
+    color: #111827;
+}
+
+nav ul li a:active {
+    background: #1d4ed8;
+}
+
+/* ===== Cards ===== */
+
+.card,
+.hero-card {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 0.06rem solid rgb(209, 213, 219);
+    border-radius: 1rem;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.hero-card {
+    border-left: 0.4rem solid #2563eb;
+}
+
+.aside-box {
+    background: hsl(214, 95%, 93%);
+}
+
+.text-box {
+    max-height: 11rem;
+    overflow: auto;
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ===== Lists ===== */
+
+.marked-list li::before {
+    content: "✓ ";
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* ===== Media ===== */
+
+.media-card figure {
+    margin: 0;
+}
+
+.profile-image {
+    border: 0.25rem solid #2563eb;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+figcaption {
+    margin-top: 0.5rem;
+    color: rgb(75, 85, 99);
+    font-size: 0.9rem;
+}
+
+/* ===== Table ===== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #ffffff;
+}
+
+caption {
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+th,
+td {
+    padding: 0.8rem;
+    border: 0.06rem solid #d1d5db;
+    text-align: left;
+}
+
+th {
+    background: #111827;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background: hsl(214, 95%, 96%);
+}
+
+tbody tr:hover {
+    background: #dbeafe;
+}
+
+/* ===== Form ===== */
+
+.contact-form fieldset {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 0.06rem solid #d1d5db;
+    border-radius: 0.8rem;
+}
+
+.contact-form legend {
+    padding: 0 0.4rem;
+    font-weight: 700;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 0.06rem solid #9ca3af;
+    border-radius: 0.5rem;
+    font: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.4rem;
+    cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.2);
+}
+
+button {
+    padding: 0.8rem 1.2rem;
+    border: 0;
+    border-radius: 0.6rem;
+    background: #2563eb;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+button:active {
+    background: #1e40af;
+}
+
+/* ===== Projects ===== */
+
+.project-grid {
+    display: block;
+}
+
+.project-card {
+    min-height: 9rem;
+}
+
+/* ===== Fixed button ===== */
+
+.to-top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+    width: 2.8rem;
+    height: 2.8rem;
+    padding-top: 0.35rem;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background: #111827;
+    color: #ffffff;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    color: #ffffff;
+    background: #111827;
+}
