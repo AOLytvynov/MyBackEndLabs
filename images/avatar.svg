@@ -1,0 +1,8 @@
+﻿<svg width=300 height=300 viewBox=0 0 300 300 xmlns=http://www.w3.org/2000/svg>
+    <rect width=300 height=300 rx=24 fill=#e8f0fe/>
+    <circle cx=150 cy=105 r=55 fill=#4f6bed/>
+    <circle cx=150 cy=88 r=20 fill=#ffffff/>
+    <path d=M105 145 C115 115, 185 115, 195 145 C180 165, 120 165, 105 145 Z fill=#ffffff/>
+    <rect x=65 y=190 width=170 height=55 rx=12 fill=#ffffff/>
+    <text x=150 y=224 text-anchor=middle font-family=Arial font-size=28 font-weight=bold fill=#1f2937>AOL</text>
+</svg>
