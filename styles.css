@@ -531,3 +531,53 @@ button:hover {
         margin-left: var(--spacing-lg);
     }
 }
+
+/* ===== Lab 03 nav fix ===== */
+
+.nav-list {
+    display: none;
+    flex-direction: column;
+    gap: var(--spacing-sm, 0.5rem);
+    padding: var(--spacing-md, 1rem) 0 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-toggle:checked ~ .nav-list {
+    display: flex;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+.nav-list a,
+.nav-list strong {
+    display: block;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.7rem;
+    color: #ffffff;
+    background: #2563eb;
+    text-decoration: none;
+}
+
+.nav-list a:hover,
+.nav-list strong {
+    color: #111827;
+    background: #14b8a6;
+}
+
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-list,
+    .menu-toggle:checked ~ .nav-list {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0;
+    }
+}
