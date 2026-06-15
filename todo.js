@@ -337,3 +337,19 @@ elements.filters.addEventListener("click", (event) => {
 
     setActiveFilter(button.dataset.filter);
 });
+
+function debounce(callback, delay) {
+    let timeoutId;
+
+    return function (...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => callback.apply(this, args), delay);
+    };
+}
+
+const handleSearch = debounce((event) => {
+    state.search = event.target.value.trim();
+    renderTasks();
+}, 300);
+
+elements.searchInput.addEventListener("input", handleSearch);
