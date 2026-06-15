@@ -1,28 +1,36 @@
 ﻿<!DOCTYPE html>
-<html lang=uk>
+<html lang="uk">
 <head>
-    <meta charset=UTF-8>
-    <meta name=viewport content=width=device-width, initial-scale=1.0>
-    <meta name=description content=Портфоліо Літвінова Артема Олександровича>
-    <meta name=author content=Літвінов Артем Олександрович>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Портфоліо Літвінова Артема Олександровича">
+    <meta name="author" content="Літвінов Артем Олександрович">
     <title>Головна — Портфоліо</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>Літвінов Артем Олександрович</h1>
+<body id="top">
+    <header class="site-header">
+        <div class="header-inner">
+            <h1>Літвінов Артем</h1>
 
-        <nav>
-            <ul>
-                <li><strong>Головна</strong></li>
-                <li><a href=about.html>Про мене</a></li>
-                <li><a href=projects.html>Проєкти</a></li>
-                <li><a href=contacts.html>Контакти</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul class="nav-menu">
+                    <li><strong>Головна</strong></li>
+                    <li><a href="about.html">Про мене</a></li>
+                    <li><a href="projects.html">Проєкти</a></li>
+                    <li><a href="contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
+        <section id="hero" class="hero-card">
+            <div class="badge">HTML</div>
+
             <h2>Вітаю</h2>
 
             <p>
@@ -39,55 +47,57 @@
             </blockquote>
         </section>
 
-        <section>
+        <section class="card">
             <h2>Мої цілі</h2>
 
-            <ol>
+            <ol class="marked-list">
                 <li>Краще зрозуміти HTML5.</li>
                 <li>Навчитися створювати структуру сайту.</li>
                 <li>Працювати з Git та GitHub.</li>
             </ol>
         </section>
 
-        <section>
+        <section class="card media-card">
             <h2>Фото</h2>
 
             <figure>
-                <img src=images/avatar.svg alt=Аватар автора портфоліо width=300 height=300>
+                <img class="profile-image" src="images/avatar.svg" alt="Аватар автора портфоліо" width="300" height="300">
                 <figcaption>Навчальне зображення для портфоліо.</figcaption>
             </figure>
         </section>
 
-        <article>
+        <article class="card text-box">
             <h2>Про сайт</h2>
 
             <p>
                 Сайт складається з кількох сторінок і демонструє базові можливості HTML.
+                У другій лабораторній роботі до нього додано CSS-оформлення.
             </p>
         </article>
 
-        <section>
+        <section class="card">
             <h2>Аудіо</h2>
 
             <figure>
                 <audio controls>
-                    <source src=audio/intro.wav type=audio/wav>
+                    <source src="audio/intro.wav" type="audio/wav">
                     Ваш браузер не підтримує аудіо.
                 </audio>
                 <figcaption>Приклад аудіо на HTML-сторінці.</figcaption>
             </figure>
         </section>
 
-        <aside>
+        <aside class="card aside-box">
             <h2>Примітка</h2>
-            <p>У першій лабораторній роботі CSS та JavaScript не використовуються.</p>
+            <p>У цій версії сторінки вже використовується зовнішній CSS-файл.</p>
         </aside>
     </main>
 
+    <a class="to-top" href="#top">↑</a>
+
     <footer>
         <p>&copy; 2026 Літвінов Артем Олександрович</p>
-        <p><a href=mailto:a.o.lytvynov@student.khai.edu>a.o.lytvynov@student.khai.edu</a></p>
+        <p><a href="mailto:a.o.lytvynov@student.khai.edu">a.o.lytvynov@student.khai.edu</a></p>
     </footer>
 </body>
 </html>
-
