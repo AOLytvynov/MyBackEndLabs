@@ -282,3 +282,58 @@ function handleTaskListClick(event) {
 elements.form.addEventListener("submit", handleFormSubmit);
 elements.taskList.addEventListener("click", handleTaskListClick);
 elements.input.addEventListener("input", updateAddButton);
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const title = elements.input.value.trim();
+
+    if (!title) {
+        return;
+    }
+
+    addTask(title);
+}
+
+function handleTaskListClick(event) {
+    const target = event.target;
+    const taskItem = target.closest(".task-item");
+
+    if (!taskItem) {
+        return;
+    }
+
+    const taskId = Number(taskItem.dataset.id);
+
+    if (target.classList.contains("task-delete")) {
+        deleteTask(taskId);
+    }
+
+    if (target.classList.contains("task-checkbox")) {
+        toggleTask(taskId, target.checked);
+    }
+}
+
+elements.form.addEventListener("submit", handleFormSubmit);
+elements.taskList.addEventListener("click", handleTaskListClick);
+elements.input.addEventListener("input", updateAddButton);
+
+function setActiveFilter(filter) {
+    state.filter = filter;
+
+    elements.filters.querySelectorAll(".filter-btn").forEach((button) => {
+        button.classList.toggle("active", button.dataset.filter === filter);
+    });
+
+    renderTasks();
+}
+
+elements.filters.addEventListener("click", (event) => {
+    const button = event.target.closest(".filter-btn");
+
+    if (!button) {
+        return;
+    }
+
+    setActiveFilter(button.dataset.filter);
+});
