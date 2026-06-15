@@ -11,8 +11,12 @@ HTML-портфоліо.
 
 ## ЛР 2
 
-CSS-оформлення портфоліо.
+CSS-оформлення.
 
 ## ЛР 3
 
-Адаптивна верстка: Grid, Flexbox, media queries, CSS variables, transitions, animation.
+Адаптивна верстка.
+
+## ЛР 4
+
+JavaScript: типи даних, умови, масиви, функції, об'єкти, рядки.
