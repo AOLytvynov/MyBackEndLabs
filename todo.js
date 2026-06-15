@@ -9,6 +9,32 @@ const state = {
     user: null
 };
 
+const taskTranslations = {
+    "delectus aut autem": "вивчити основи DOM",
+    "quis ut nam facilis et officia qui": "додати обробники подій",
+    "fugiat veniam minus": "перевірити роботу форми",
+    "et porro tempora": "завершити навчальне завдання",
+    "laboriosam mollitia et enim quasi adipisci quia provident illum": "оформити список завдань",
+    "qui ullam ratione quibusdam voluptatem quia omnis": "налаштувати фільтри завдань",
+    "illo expedita consequatur quia in": "перевірити пошук за текстом",
+    "quo adipisci enim quam ut ab": "реалізувати видалення завдань",
+    "molestiae perspiciatis ipsa": "додати повідомлення про помилки",
+    "illo est ratione doloremque quia maiores aut": "перевірити роботу API",
+    "vero rerum temporibus dolor": "завантажити дані користувача",
+    "ipsa repellendus fugit nisi": "оновити статус завдання",
+    "et doloremque nulla": "зробити фінальну перевірку",
+    "repellendus sunt dolores architecto voluptatum": "покращити вигляд карток",
+    "ab voluptatum amet voluptas": "підготувати роботу до здачі",
+    "accusamus eos facilis sint et aut voluptatem": "перевірити адаптивність сторінки",
+    "quo laboriosam deleniti aut qui": "оформити README",
+    "dolorum est consequatur ea mollitia in culpa": "перевірити консоль браузера",
+    "molestiae ipsa aut voluptatibus pariatur dolor nihil": "виправити дрібні помилки",
+    "ullam nobis libero sapiente ad optio sint": "завантажити роботу на GitHub"
+};
+
+function translateTaskTitle(title) {
+    return taskTranslations[title] ?? title;
+}
 const elements = {
     form: document.querySelector("#todo-form"),
     input: document.querySelector("#task-input"),
@@ -130,7 +156,7 @@ async function loadInitialData() {
             userResponse.json()
         ]);
 
-        state.tasks = todos;
+        state.tasks = todos.map((task) => ({ ...task, title: translateTaskTitle(task.title) }));
         renderUserInfo(user);
         renderTasks();
     } catch (error) {
@@ -160,7 +186,7 @@ async function loadInitialData() {
             userResponse.json()
         ]);
 
-        state.tasks = todos;
+        state.tasks = todos.map((task) => ({ ...task, title: translateTaskTitle(task.title) }));
         renderUserInfo(user);
         renderTasks();
     } catch (error) {
@@ -371,3 +397,4 @@ document.addEventListener("keydown", (event) => {
 
 updateAddButton();
 loadInitialData();
+
