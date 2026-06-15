@@ -99,3 +99,70 @@ print("Task 1: primitive types", primitiveTypes);
 print("Task 1: type conversions", typeConversions);
 print("Task 1: template literal", templateInfo);
 print("Task 1: equality examples", equalityExamples);
+
+/* Task 2. Conditions */
+
+function getGrade(score) {
+    if (typeof score !== "number" || Number.isNaN(score) || score < 0 || score > 100) {
+        return "невалідний бал";
+    }
+
+    if (score <= 59) {
+        return "незадовільно";
+    }
+
+    if (score <= 74) {
+        return "задовільно";
+    }
+
+    if (score <= 89) {
+        return "добре";
+    }
+
+    return "відмінно";
+}
+
+function getSeasonUA(month) {
+    switch (month) {
+        case 12:
+        case 1:
+        case 2:
+            return "зима";
+        case 3:
+        case 4:
+        case 5:
+            return "весна";
+        case 6:
+        case 7:
+        case 8:
+            return "літо";
+        case 9:
+        case 10:
+        case 11:
+            return "осінь";
+        default:
+            return "невалідний місяць";
+    }
+}
+
+const studentAge = 19;
+const adultStatus = studentAge >= 18 ? "повнолітній" : "неповнолітній";
+
+print("Task 2: grades", [
+    getGrade(45),
+    getGrade(66),
+    getGrade(82),
+    getGrade(95),
+    getGrade(-1),
+    getGrade("90")
+]);
+
+print("Task 2: seasons", [
+    getSeasonUA(1),
+    getSeasonUA(4),
+    getSeasonUA(7),
+    getSeasonUA(10),
+    getSeasonUA(15)
+]);
+
+print("Task 2: ternary operator", adultStatus);
