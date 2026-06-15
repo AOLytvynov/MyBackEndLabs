@@ -356,3 +356,62 @@ print("Task 6: electronics by price", electronicsByPrice);
 print("Task 6: products by category", productsByCategory);
 print("Task 6: students by grade", studentsByGrade);
 print("Task 6: students by name", studentsByName);
+
+/* Task 7. Strings */
+
+function capitalize(str) {
+    if (!str) {
+        return "";
+    }
+
+    const normalized = str.toLowerCase();
+    return normalized[0].toUpperCase() + normalized.slice(1);
+}
+
+function countWords(str) {
+    return str.trim().split(" ").filter((word) => word.length > 0).length;
+}
+
+function truncate(str, maxLength) {
+    if (str.length <= maxLength) {
+        return str;
+    }
+
+    return `${str.slice(0, maxLength)}...`;
+}
+
+function isValidEmail(email) {
+    const atIndex = email.indexOf("@");
+    const lastAtIndex = email.lastIndexOf("@");
+    const dotIndex = email.lastIndexOf(".");
+
+    return email.includes("@")
+        && atIndex === lastAtIndex
+        && atIndex > 0
+        && dotIndex > atIndex + 1
+        && email.length - dotIndex - 1 >= 2;
+}
+
+print("Task 7: capitalize", [
+    capitalize("javaScript"),
+    capitalize("hello world"),
+    capitalize("")
+]);
+
+print("Task 7: count words", [
+    countWords("JavaScript це круто"),
+    countWords(" пробіли між словами "),
+    countWords("")
+]);
+
+print("Task 7: truncate", [
+    truncate("Це довгий текст для прикладу", 15),
+    truncate("Короткий", 20)
+]);
+
+print("Task 7: email validation", [
+    { email: "user@example.com", valid: isValidEmail("user@example.com") },
+    { email: "invalid-email", valid: isValidEmail("invalid-email") },
+    { email: "@example.com", valid: isValidEmail("@example.com") },
+    { email: "user@.com", valid: isValidEmail("user@.com") }
+]);
