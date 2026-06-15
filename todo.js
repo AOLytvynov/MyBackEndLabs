@@ -73,7 +73,7 @@ function updateAddButton() {
 function renderUserInfo(user) {
     state.user = user;
 
-    elements.user.textContent = `Користувач: ${user.name} (${user.email})`;
+    elements.user.textContent = "Користувач: Літвінов Артем Олександрович (a.o.lytvynov@student.khai.edu)";
 }
 
 function createTaskElement(task) {
@@ -397,4 +397,5 @@ document.addEventListener("keydown", (event) => {
 
 updateAddButton();
 loadInitialData();
+
 
