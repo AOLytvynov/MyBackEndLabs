@@ -194,3 +194,69 @@ print("Task 3: removed from middle", removedFromMiddle);
 print("Task 3: first student with grade > 90", firstExcellentStudent);
 print("Task 3: JavaScript students", jsStudents);
 print("Task 3: average grade", averageGrade.toFixed(2));
+
+/* Task 4. Functions */
+
+function rectangleAreaDeclaration(width, height) {
+    return width * height;
+}
+
+const rectangleAreaExpression = function (width, height) {
+    return width * height;
+};
+
+const rectangleAreaArrow = (width, height) => width * height;
+
+function createCounter() {
+    let value = 0;
+
+    return {
+        increment() {
+            value += 1;
+            return value;
+        },
+        decrement() {
+            value -= 1;
+            return value;
+        },
+        getValue() {
+            return value;
+        }
+    };
+}
+
+function createUser(name, role = "student", isActive = true) {
+    return {
+        name,
+        role,
+        isActive
+    };
+}
+
+const sum = (...numbers) => numbers.reduce((total, number) => total + number, 0);
+
+function printStudentInfo({ name, grade, courses }) {
+    return `${name} має оцінку ${grade}. Курси: ${courses.join(", ")}`;
+}
+
+const counter = createCounter();
+const counterResults = [
+    counter.increment(),
+    counter.increment(),
+    counter.decrement(),
+    counter.getValue()
+];
+
+print("Task 4: rectangle area", {
+    declaration: rectangleAreaDeclaration(5, 4),
+    expression: rectangleAreaExpression(5, 4),
+    arrow: rectangleAreaArrow(5, 4)
+});
+
+print("Task 4: closure counter", counterResults);
+print("Task 4: default parameters", [
+    createUser("Артем"),
+    createUser("Олена", "mentor", false)
+]);
+print("Task 4: rest parameters", [sum(1, 2, 3), sum(10, 20)]);
+print("Task 4: destructuring", printStudentInfo(students[0]));
