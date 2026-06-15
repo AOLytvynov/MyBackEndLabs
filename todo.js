@@ -43,3 +43,70 @@ function clearError() {
 function updateAddButton() {
     elements.addButton.disabled = elements.input.value.trim().length === 0;
 }
+
+function renderUserInfo(user) {
+    state.user = user;
+
+    elements.user.textContent = `Користувач: ${user.name} (${user.email})`;
+}
+
+function createTaskElement(task) {
+    const li = document.createElement("li");
+    li.classList.add("task-item");
+    li.dataset.id = task.id;
+
+    if (task.completed) {
+        li.classList.add("completed");
+    }
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.completed;
+    checkbox.classList.add("task-checkbox");
+    checkbox.setAttribute("aria-label", "Змінити статус завдання");
+
+    const span = document.createElement("span");
+    span.textContent = task.title;
+    span.classList.add("task-title");
+
+    const deleteButton = document.createElement("button");
+    deleteButton.type = "button";
+    deleteButton.textContent = "Видалити";
+    deleteButton.classList.add("task-delete");
+
+    li.append(checkbox, span, deleteButton);
+
+    return li;
+}
+
+function getVisibleTasks() {
+    return state.tasks.filter((task) => {
+        const matchesFilter =
+            state.filter === "all"
+            || (state.filter === "active" && !task.completed)
+            || (state.filter === "completed" && task.completed);
+
+        const matchesSearch = task.title
+            .toLowerCase()
+            .includes(state.search.toLowerCase());
+
+        return matchesFilter && matchesSearch;
+    });
+}
+
+function renderTasks() {
+    elements.taskList.textContent = "";
+
+    const visibleTasks = getVisibleTasks();
+
+    visibleTasks.forEach((task) => {
+        elements.taskList.append(createTaskElement(task));
+    });
+
+    updateCounter();
+}
+
+function updateCounter() {
+    const activeCount = state.tasks.filter((task) => !task.completed).length;
+    elements.counter.textContent = `Активних завдань: ${activeCount}`;
+}
