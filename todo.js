@@ -353,3 +353,21 @@ const handleSearch = debounce((event) => {
 }, 300);
 
 elements.searchInput.addEventListener("input", handleSearch);
+
+elements.input.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        elements.input.value = "";
+        updateAddButton();
+    }
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && document.activeElement === elements.searchInput) {
+        elements.searchInput.value = "";
+        state.search = "";
+        renderTasks();
+    }
+});
+
+updateAddButton();
+loadInitialData();
