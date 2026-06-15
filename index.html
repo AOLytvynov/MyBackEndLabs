@@ -6,99 +6,104 @@
     <meta name="description" content="Портфоліо Літвінова Артема Олександровича">
     <meta name="author" content="Літвінов Артем Олександрович">
     <title>Головна — Портфоліо</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
-    <header class="site-header">
-        <div class="header-inner">
-            <h1>Літвінов Артем</h1>
+    <div class="page">
+        <header class="site-header">
+            <div class="header-inner">
+                <h1>Літвінов Артем</h1>
 
-            <nav>
-                <ul class="nav-menu">
-                    <li><strong>Головна</strong></li>
-                    <li><a href="about.html">Про мене</a></li>
-                    <li><a href="projects.html">Проєкти</a></li>
-                    <li><a href="contacts.html">Контакти</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+                <nav class="nav">
+                    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
 
-    <main>
-        <section id="hero" class="hero-card">
-            <div class="badge">HTML</div>
+                    <ul class="nav-list">
+                        <li><strong>Головна</strong></li>
+                        <li><a href="about.html">Про мене</a></li>
+                        <li><a href="projects.html">Проєкти</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
-            <h2>Вітаю</h2>
-
-            <p>
-                Мене звати <strong>Літвінов Артем Олександрович</strong>.
-                Я навчаюся і розвиваюся у напрямі <em>фронтенд-розробки</em>.
-            </p>
-
-            <p>
-                Цей сайт створено як навчальне портфоліо з використанням HTML.
-            </p>
-
-            <blockquote>
-                <p>Практика — найкращий спосіб навчитися.</p>
-            </blockquote>
-        </section>
-
-        <section class="card">
-            <h2>Мої цілі</h2>
-
-            <ol class="marked-list">
-                <li>Краще зрозуміти HTML5.</li>
-                <li>Навчитися створювати структуру сайту.</li>
-                <li>Працювати з Git та GitHub.</li>
-            </ol>
-        </section>
-
-        <section class="card media-card">
-            <h2>Фото</h2>
-
-            <figure>
-                <img class="profile-image" src="images/avatar.jpg" alt="Аватар автора портфоліо" width="300" height="300">
-                <figcaption>Навчальне зображення для портфоліо.</figcaption>
-            </figure>
-        </section>
-
-        <article class="card text-box">
-            <h2>Про сайт</h2>
-
-            <p>
-                Сайт складається з кількох сторінок і демонструє базові можливості HTML.
-                У другій лабораторній роботі до нього додано CSS-оформлення.
-            </p>
-        </article>
-
-        <section class="card">
-            <h2>Аудіо</h2>
-
-            <figure>
-                <audio controls>
-                    <source src="audio/intro.wav" type="audio/wav">
-                    Ваш браузер не підтримує аудіо.
-                </audio>
-                <figcaption>Приклад аудіо на HTML-сторінці.</figcaption>
-            </figure>
-        </section>
-
-        <aside class="card aside-box">
-            <h2>Примітка</h2>
-            <p>У цій версії сторінки вже використовується зовнішній CSS-файл.</p>
+        <aside class="sidebar">
+            <h2>Навігація</h2>
+            <p>HTML, CSS, адаптивна верстка.</p>
         </aside>
-    </main>
+
+        <main class="content">
+            <section id="hero" class="hero-card">
+                <div class="badge">Portfolio</div>
+
+                <h2>Вітаю</h2>
+
+                <p>
+                    Мене звати <strong>Літвінов Артем Олександрович</strong>.
+                    Я навчаюся і розвиваюся у напрямі <em>фронтенд-розробки</em>.
+                </p>
+
+                <p>
+                    Цей сайт створено як навчальне портфоліо з використанням HTML і CSS.
+                </p>
+
+                <blockquote>
+                    <p>Практика — найкращий спосіб навчитися.</p>
+                </blockquote>
+            </section>
+
+            <section class="card">
+                <h2>Мої цілі</h2>
+
+                <ol class="marked-list">
+                    <li>Краще зрозуміти HTML5.</li>
+                    <li>Навчитися створювати адаптивні сторінки.</li>
+                    <li>Працювати з Git та GitHub.</li>
+                </ol>
+            </section>
+
+            <section class="card media-card">
+                <h2>Фото</h2>
+
+                <figure>
+                    <img class="profile-image" src="images/avatar.jpg" alt="Фото автора портфоліо" width="512" height="512">
+                    <figcaption>Фото для персонального портфоліо.</figcaption>
+                </figure>
+            </section>
+
+            <article class="card text-box">
+                <h2>Про сайт</h2>
+
+                <p>
+                    Сайт складається з кількох сторінок і демонструє базові можливості HTML,
+                    CSS, адаптивної верстки, Flexbox та CSS Grid.
+                </p>
+            </article>
+
+            <section class="card">
+                <h2>Аудіо</h2>
+
+                <figure>
+                    <audio controls>
+                        <source src="audio/intro.wav" type="audio/wav">
+                        Ваш браузер не підтримує аудіо.
+                    </audio>
+                    <figcaption>Приклад аудіо на HTML-сторінці.</figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Літвінов Артем Олександрович</p>
+            <p><a href="mailto:a.o.lytvynov@student.khai.edu">a.o.lytvynov@student.khai.edu</a></p>
+        </footer>
+    </div>
 
     <a class="to-top" href="#top">↑</a>
-
-    <footer>
-        <p>&copy; 2026 Літвінов Артем Олександрович</p>
-        <p><a href="mailto:a.o.lytvynov@student.khai.edu">a.o.lytvynov@student.khai.edu</a></p>
-    </footer>
 </body>
 </html>
-
