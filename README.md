@@ -23,4 +23,15 @@ JavaScript: типи даних, умови, масиви, функції, об'
 
 ## ЛР 5
 
-Task Manager: DOM, події, делегування, debounce, Fetch API, async/await.
+Task Manager: DOM, події, делегування, debounce, Fetch API.
+
+## ЛР 6
+
+React + Vite каталог книг.
+
+Запуск:
+
+```bash
+cd lab-06-react-catalog
+npm install
+npm run dev
