@@ -13,10 +13,6 @@ HTML-портфоліо.
 
 CSS-оформлення портфоліо.
 
-Файли:
+## ЛР 3
 
-- index.html
-- about.html
-- projects.html
-- contacts.html
-- styles.css
+Адаптивна верстка: Grid, Flexbox, media queries, CSS variables, transitions, animation.
