@@ -16,3 +16,6 @@ desktop.ini
 # Vite cache
 .vite/
 lab-06-react-catalog/.vite/
+
+# Vite build
+lab-06-react-catalog/dist/
