@@ -20,3 +20,7 @@ CSS-оформлення.
 ## ЛР 4
 
 JavaScript: типи даних, умови, масиви, функції, об'єкти, рядки.
+
+## ЛР 5
+
+Task Manager: DOM, події, делегування, debounce, Fetch API, async/await.
