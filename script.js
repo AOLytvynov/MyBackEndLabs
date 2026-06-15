@@ -166,3 +166,31 @@ print("Task 2: seasons", [
 ]);
 
 print("Task 2: ternary operator", adultStatus);
+
+/* Task 3. Arrays */
+
+let students = [
+    { name: "Олена Коваленко", grade: 87, courses: ["JavaScript", "HTML", "CSS"] },
+    { name: "Іван Петренко", grade: 58, courses: ["HTML"] },
+    { name: "Марія Шевченко", grade: 94, courses: ["JavaScript", "React"] },
+    { name: "Андрій Бондар", grade: 73, courses: ["CSS", "HTML"] },
+    { name: "Софія Мельник", grade: 91, courses: ["JavaScript", "CSS"] },
+    { name: "Дмитро Сидоренко", grade: 66, courses: ["Git", "HTML"] }
+];
+
+students.push({ name: "Наталія Романенко", grade: 79, courses: ["JavaScript", "Git"] });
+const removedLastStudent = students.pop();
+
+const removedFromMiddle = students.splice(2, 1);
+students.splice(2, 0, { name: "Артем Літвінов", grade: 88, courses: ["HTML", "CSS", "JavaScript"] });
+
+const firstExcellentStudent = students.find((student) => student.grade > 90);
+const jsStudents = students.filter((student) => student.courses.includes("JavaScript"));
+const averageGrade = students.reduce((sum, student) => sum + student.grade, 0) / students.length;
+
+print("Task 3: current students", students);
+print("Task 3: removed last student", removedLastStudent);
+print("Task 3: removed from middle", removedFromMiddle);
+print("Task 3: first student with grade > 90", firstExcellentStudent);
+print("Task 3: JavaScript students", jsStudents);
+print("Task 3: average grade", averageGrade.toFixed(2));
