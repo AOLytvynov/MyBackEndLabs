@@ -319,3 +319,40 @@ print("Task 5: optional chaining", {
     labScore,
     mentorName
 });
+
+/* Task 6. Array method chains */
+
+const products = [
+    { name: "Ноутбук", price: 25000, category: "electronics", inStock: true, quantity: 5 },
+    { name: "Мишка", price: 600, category: "electronics", inStock: true, quantity: 12 },
+    { name: "Клавіатура", price: 1400, category: "electronics", inStock: false, quantity: 7 },
+    { name: "Монітор", price: 7200, category: "electronics", inStock: true, quantity: 3 },
+    { name: "Стілець", price: 3500, category: "furniture", inStock: true, quantity: 4 },
+    { name: "Стіл", price: 5200, category: "furniture", inStock: false, quantity: 2 },
+    { name: "Блокнот", price: 120, category: "stationery", inStock: true, quantity: 30 },
+    { name: "Ручка", price: 35, category: "stationery", inStock: true, quantity: 100 }
+];
+
+const totalStockValue = products
+    .filter((product) => product.inStock)
+    .map((product) => product.price * product.quantity)
+    .reduce((total, value) => total + value, 0);
+
+const electronicsByPrice = products
+    .filter((product) => product.category === "electronics")
+    .sort((a, b) => a.price - b.price)
+    .map((product) => product.name);
+
+const productsByCategory = products.reduce((result, product) => {
+    result[product.category] = (result[product.category] ?? 0) + 1;
+    return result;
+}, {});
+
+const studentsByGrade = [...students].sort((a, b) => b.grade - a.grade);
+const studentsByName = [...students].sort((a, b) => a.name.localeCompare(b.name, "uk"));
+
+print("Task 6: total stock value", totalStockValue);
+print("Task 6: electronics by price", electronicsByPrice);
+print("Task 6: products by category", productsByCategory);
+print("Task 6: students by grade", studentsByGrade);
+print("Task 6: students by name", studentsByName);
