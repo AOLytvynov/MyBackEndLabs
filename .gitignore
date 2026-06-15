@@ -13,3 +13,6 @@ desktop.ini
 
 # Environment files
 .env
+# Vite cache
+.vite/
+lab-06-react-catalog/.vite/
