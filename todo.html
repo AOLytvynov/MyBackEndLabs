@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Manager Todo App">
+    <meta name="author" content="Літвінов Артем Олександрович">
+    <title>Task Manager — Портфоліо</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+    <div class="page">
+        <header class="site-header">
+            <div class="header-inner">
+                <h1>Task Manager</h1>
+
+                <nav class="nav">
+                    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                    <label for="menu-toggle" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <ul class="nav-list">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="about.html">Про мене</a></li>
+                        <li><a href="projects.html">Проєкти</a></li>
+                        <li><strong>Task Manager</strong></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <h2>ЛР 5</h2>
+            <p>DOM, події, Fetch API та робота з Todo App.</p>
+        </aside>
+
+        <main class="content">
+            <section class="card todo-app">
+                <h2>Список завдань</h2>
+
+                <div class="todo-user" id="todo-user">
+                    Дані користувача завантажуються...
+                </div>
+
+                <form class="todo-form" id="todo-form">
+                    <label for="task-input">Нове завдання</label>
+                    <div class="todo-form-row">
+                        <input type="text" id="task-input" class="task-input" placeholder="Введіть текст завдання">
+                        <button type="submit" id="add-task-btn" disabled>Додати</button>
+                    </div>
+                </form>
+
+                <div class="todo-tools">
+                    <label for="search-input">Пошук</label>
+                    <input type="search" id="search-input" class="search-input" placeholder="Пошук за текстом">
+                </div>
+
+                <div class="todo-filters" id="todo-filters">
+                    <button type="button" class="filter-btn active" data-filter="all">Всі</button>
+                    <button type="button" class="filter-btn" data-filter="active">Активні</button>
+                    <button type="button" class="filter-btn" data-filter="completed">Виконані</button>
+                </div>
+
+                <p class="todo-counter" id="todo-counter">Активних завдань: 0</p>
+
+                <div class="todo-loader hidden" id="todo-loader">Завантаження...</div>
+                <div class="todo-error hidden" id="todo-error"></div>
+
+                <ul class="task-list" id="task-list"></ul>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2026 Літвінов Артем Олександрович</p>
+        </footer>
+    </div>
+
+    <a class="to-top" href="#top">↑</a>
+    <script src="todo.js"></script>
+</body>
+</html>
