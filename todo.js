@@ -170,3 +170,45 @@ async function loadInitialData() {
         hideLoader();
     }
 }
+
+async function addTask(title) {
+    showLoader();
+    clearError();
+
+    try {
+        const response = await fetch(`${API_URL}/todos`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({
+                title,
+                completed: false,
+                userId: 1
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Помилка HTTP: ${response.status}`);
+        }
+
+        const createdTask = await response.json();
+
+        const newTask = {
+            ...createdTask,
+            id: Date.now(),
+            title,
+            completed: false
+        };
+
+        state.tasks.unshift(newTask);
+        elements.input.value = "";
+        updateAddButton();
+        renderTasks();
+    } catch (error) {
+        showError("Не вдалося створити завдання.");
+        console.error("Помилка створення:", error);
+    } finally {
+        hideLoader();
+    }
+}
