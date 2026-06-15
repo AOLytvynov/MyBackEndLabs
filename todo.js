@@ -110,3 +110,33 @@ function updateCounter() {
     const activeCount = state.tasks.filter((task) => !task.completed).length;
     elements.counter.textContent = `Активних завдань: ${activeCount}`;
 }
+
+async function loadInitialData() {
+    showLoader();
+    clearError();
+
+    try {
+        const [todosResponse, userResponse] = await Promise.all([
+            fetch(`${API_URL}/todos?_limit=20`),
+            fetch(`${API_URL}/users/1`)
+        ]);
+
+        if (!todosResponse.ok || !userResponse.ok) {
+            throw new Error("Помилка завантаження даних");
+        }
+
+        const [todos, user] = await Promise.all([
+            todosResponse.json(),
+            userResponse.json()
+        ]);
+
+        state.tasks = todos;
+        renderUserInfo(user);
+        renderTasks();
+    } catch (error) {
+        showError("Не вдалося завантажити дані. Спробуйте пізніше.");
+        console.error("Помилка завантаження:", error);
+    } finally {
+        hideLoader();
+    }
+}
