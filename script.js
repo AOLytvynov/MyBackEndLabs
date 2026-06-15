@@ -260,3 +260,62 @@ print("Task 4: default parameters", [
 ]);
 print("Task 4: rest parameters", [sum(1, 2, 3), sum(10, 20)]);
 print("Task 4: destructuring", printStudentInfo(students[0]));
+
+/* Task 5. Objects */
+
+const studentProfile = {
+    firstName: "Артем",
+    lastName: "Літвінов",
+    age: 20,
+    university: "ХАІ",
+    grades: {
+        math: 85,
+        physics: 92,
+        programming: 94,
+        lab: 96
+    },
+    isActive: true,
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    },
+    getAverageGrade() {
+        const grades = Object.values(this.grades);
+        return grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
+    }
+};
+
+const dynamicKey = "university";
+const profileCopy = {
+    ...studentProfile,
+    university: "National Aerospace University"
+};
+
+const labScore = studentProfile.grades?.lab;
+const mentorName = studentProfile.mentor?.name ?? "Не призначено";
+
+print("Task 5: object methods", {
+    fullName: studentProfile.getFullName(),
+    averageGrade: studentProfile.getAverageGrade().toFixed(2)
+});
+
+print("Task 5: property access", {
+    dotNotation: studentProfile.firstName,
+    bracketNotation: studentProfile["lastName"],
+    dynamicKey: studentProfile[dynamicKey]
+});
+
+print("Task 5: object iteration", {
+    keys: Object.keys(studentProfile),
+    values: Object.values(studentProfile),
+    entries: Object.entries(studentProfile)
+});
+
+print("Task 5: spread copy", {
+    originalUniversity: studentProfile.university,
+    copiedUniversity: profileCopy.university
+});
+
+print("Task 5: optional chaining", {
+    labScore,
+    mentorName
+});
