@@ -212,3 +212,38 @@ async function addTask(title) {
         hideLoader();
     }
 }
+
+async function toggleTask(id, completed) {
+    clearError();
+
+    try {
+        const response = await fetch(`${API_URL}/todos/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify({ completed })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Помилка HTTP: ${response.status}`);
+        }
+
+        state.tasks = state.tasks.map((task) => {
+            if (task.id === id) {
+                return {
+                    ...task,
+                    completed
+                };
+            }
+
+            return task;
+        });
+
+        renderTasks();
+    } catch (error) {
+        showError("Не вдалося оновити завдання.");
+        console.error("Помилка оновлення:", error);
+        renderTasks();
+    }
+}
